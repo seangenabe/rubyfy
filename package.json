@@ -1,0 +1,32 @@
+{
+  "name": "rubyfy",
+  "version": "1.0.0",
+  "description": "Easily write ruby annotations and output it as HTML.",
+  "main": "lib/rubyfy.js",
+  "scripts": {
+    "prepublish": "grunt test",
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s4g6/rubyfy.git"
+  },
+  "keywords": [
+    "ruby",
+    "html"
+  ],
+  "author": "Sean Genabe <seangenabe@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s4g6/rubyfy/issues"
+  },
+  "homepage": "https://github.com/s4g6/rubyfy",
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "grunt": "^0.4.4",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-mkdir": "^0.1.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3"
+  }
+}
