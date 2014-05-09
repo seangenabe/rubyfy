@@ -12,7 +12,7 @@ class Renderer
             return renderedObjects.join('')
         null
 
-    Renderer.renderSingle = (single, opts) ->
+    Renderer.renderSingle = (single, opts = {}) ->
         {openRp, closeRp} = opts
         openRp ?= '('
         closeRp ?= ')'

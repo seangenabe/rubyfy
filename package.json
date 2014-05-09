@@ -1,6 +1,6 @@
 {
   "name": "rubyfy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easily write ruby annotations and output it as HTML.",
   "main": "lib/rubyfy.js",
   "scripts": {

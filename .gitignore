@@ -4,3 +4,4 @@ test/lib
 .idea/
 *.njsproj
 *.suo
+*.sln

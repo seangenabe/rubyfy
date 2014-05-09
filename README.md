@@ -2,6 +2,10 @@
 
 Easily write ruby annotations and output it as HTML.
 
+## Installation
+
+    npm install rubyfy
+
 ## Usage
 
 Require the module:
