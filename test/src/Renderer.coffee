@@ -20,7 +20,7 @@ describe 'Renderer', ->
             expect(new Renderer('abc').render()).null
         it 'basic render', ->
             r = new Renderer(['abc', {rb: '今日', rt: 'きょう'}, 'xyz'])
-            expect(r.render()).equal('abc<ruby>今日<rp>（</rp><rt>きょう</rt><rp>）</rp></ruby>xyz')
+            expect(r.render()).equal('abc<ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>xyz')
         it 'render single', ->
             o = Renderer.renderSingle({rb: '今日', rt: 'きょう'})
-            expect(o).equal('<ruby>今日<rp>（</rp><rt>きょう</rt><rp>）</rp></ruby>')
+            expect(o).equal('<ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>')
