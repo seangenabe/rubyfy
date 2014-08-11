@@ -16,7 +16,7 @@ describe 'Renderer', ->
 
     describe '#render()', ->
         it 'should render to null', ->
-            expect(new Renderer(null).render).null
+            expect(new Renderer(null).render()).null
             expect(new Renderer('abc').render()).null
         it 'basic render', ->
             r = new Renderer(['abc', {rb: '今日', rt: 'きょう'}, 'xyz'])
