@@ -24,14 +24,12 @@ module.exports = (grunt) ->
         filter: 'isFile'
         ext: '.js'
         bare: true
-    nodeunit:
-      main: ['test/lib/test.js']
+    mochaTest:
+      main:
+        src: ['test/lib/**/*.js']
 
-  grunt.loadNpmTasks('grunt-contrib-coffee')
-  grunt.loadNpmTasks('grunt-mkdir')
-  grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-contrib-nodeunit')
+  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'})
 
   grunt.registerTask('compile', ['mkdir', 'clean', 'coffee'])
 
-  grunt.registerTask('test', ['compile', 'nodeunit'])
+  grunt.registerTask('test', ['compile', 'mochaTest'])
