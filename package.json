@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/s4g6/rubyfy.git"
+    "url": "https://github.com/seangenabe/rubyfy.git"
   },
   "keywords": [
     "ruby",
@@ -18,9 +18,9 @@
   "author": "Sean Genabe <seangenabe@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/s4g6/rubyfy/issues"
+    "url": "https://github.com/seangenabe/rubyfy/issues"
   },
-  "homepage": "https://github.com/s4g6/rubyfy",
+  "homepage": "https://github.com/seangenabe/rubyfy",
   "devDependencies": {
     "chai": "^1.9.1",
     "coffee-script": "~1.6.3",
