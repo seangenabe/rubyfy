@@ -2,7 +2,7 @@
 
 ## The MIT License (MIT)
 
-Copyright © 2014 Sean Genabe <seangenabe@outlook.com>
+Copyright © 2014-2016 Sean Genabe <seangenabe@outlook.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

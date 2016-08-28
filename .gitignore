@@ -1,7 +1,5 @@
+dist/
 node_modules
-lib/
-test/lib
+*.log
+*.log.*
 .idea/
-*.njsproj
-*.suo
-*.sln

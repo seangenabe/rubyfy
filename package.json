@@ -2,10 +2,11 @@
   "name": "rubyfy",
   "version": "1.1.3",
   "description": "Easily write ruby annotations and output it as HTML.",
-  "main": "lib/rubyfy.js",
+  "main": "dist/index.js",
   "scripts": {
-    "prepublish": "grunt test",
-    "test": "grunt test"
+    "build": "babel lib --out-dir dist",
+    "pretest": "npm run build",
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -22,13 +23,16 @@
   },
   "homepage": "https://github.com/seangenabe/rubyfy",
   "devDependencies": {
-    "chai": "^1.9.1",
-    "coffee-script": "~1.6.3",
-    "grunt": "^0.4.4",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-coffee": "^0.10.1",
-    "grunt-mkdir": "^0.1.1",
-    "grunt-mocha-test": "^0.11.0",
-    "load-grunt-tasks": "^0.6.0"
+    "ava": "^0.16.0",
+    "babel-cli": "^6.14.0",
+    "babel-plugin-transform-unicode-property-regex": "^1.0.0"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "source": [
+      "*.js"
+    ]
   }
 }
