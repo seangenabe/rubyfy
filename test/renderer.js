@@ -15,3 +15,8 @@ t('basic render', t => {
   let r = new Renderer()
   t.is(r.render(['a', { rb: '今日', rt: 'きょう' }, 'b']), 'a<ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>b')
 })
+
+t('throw error', t => {
+  let r = new Renderer()
+  t.throws(() => r.render(NaN))
+})
