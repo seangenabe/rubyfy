@@ -18,30 +18,32 @@ t('parse should return undefined', t => {
 
 t('auto parse with surrounding characters', t => {
   let p = new Parser()
-  t.deepEqual(p.parse('ab字（じ）cd'), ['ab', { rb: '字', rt: 'じ' }, 'cd'])
+  let result = p.parse('ab字（じ）cd')
+  t.deepEqual([...result], ['ab', { rb: '字', rt: 'じ' }, 'cd'])
 })
 
 t('auto parse 2 characters', t => {
   let p = new Parser()
   let result = p.parse('今日（きょう）').filter(Boolean)
-  t.deepEqual(result, [{ rb: '今日', rt: 'きょう' }])
+  t.deepEqual([...result], [{ rb: '今日', rt: 'きょう' }])
 })
 
 t('force parse', t => {
   let p = new Parser()
   let result = p.parse('（（cm））（センチ）').filter(Boolean)
-  t.deepEqual(result, [{ rb: 'cm', rt: 'センチ' }])
+  t.deepEqual([...result], [{ rb: 'cm', rt: 'センチ' }])
 })
 
 t('force parse with surrounding characters', t => {
   let p = new Parser()
   let result = p.parse('5（（cm））（センチ）/ms')
-  t.deepEqual(result, ['5', { rb: 'cm', rt: 'センチ' }, '/ms'])
+  t.deepEqual([...result], ['5', { rb: 'cm', rt: 'センチ' }, '/ms'])
 })
 
 t('inactive ruby + force ruby', t => {
   let p = new Parser()
-  t.deepEqual(p.parse('5000（（%））（パーセント）'), ['5000', { rb: '%', rt: 'パーセント' }])
+  let result = p.parse('5000（（%））（パーセント）')
+  t.deepEqual([...result], ['5000', { rb: '%', rt: 'パーセント' }])
 })
 
 t('parse isolated rb', t => {
@@ -75,8 +77,9 @@ t('custom delimiters', t => {
   p.closeRt = '】'
   p.openRb = '≪'
   p.closeRb = '≫'
+  let result = p.parse('今日【きょう】6【ろく】7≪cm≫【センチ】')
   t.deepEqual(
-    p.parse('今日【きょう】6【ろく】7≪cm≫【センチ】'),
+    [...result],
     [
       { rb: '今日', rt: 'きょう' },
       { rb: '6', rt: 'ろく' },
@@ -84,4 +87,10 @@ t('custom delimiters', t => {
       { rb: 'cm', rt: 'センチ' }
     ]
   )
+})
+
+t('has ruby', t => {
+  let p = new Parser()
+  t.falsy(p.parse('abc').hasRuby)
+  t.truthy(p.parse('字（じ）').hasRuby)
 })

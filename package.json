@@ -4,9 +4,11 @@
   "description": "Easily write ruby annotations and output it as HTML.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel lib --out-dir dist",
-    "pretest": "npm run build",
-    "test": "ava"
+    "compile": "babel lib --out-dir dist",
+    "test": "nyc ava",
+    "pretest": "cross-env BABEL_ENV=test npm run compile",
+    "posttest": "npm run compile",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,13 @@
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-cli": "^6.14.0",
-    "babel-plugin-transform-unicode-property-regex": "^1.0.0"
+    "babel-plugin-istanbul": "^2.0.0",
+    "babel-plugin-transform-unicode-property-regex": "^1.0.0",
+    "coveralls": "^2.11.12",
+    "nyc": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   },
   "ava": {
     "files": [
@@ -34,5 +42,9 @@
     "source": [
       "*.js"
     ]
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
   }
 }

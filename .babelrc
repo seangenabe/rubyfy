@@ -1,5 +1,12 @@
 {
   "plugins": [
     ["transform-unicode-property-regex", { "useUnicodeFlag": true }]
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "istanbul"
+      ]
+    }
+  }
 }
