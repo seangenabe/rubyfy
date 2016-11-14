@@ -21,7 +21,7 @@ rubyfy('日（に）本（ほん）語（ご）')
 // => <ruby>日<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>本<rp>(</rp><rt>ほん</rt><rp>)</rp></ruby><ruby>語<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>
 ```
 
-The type of the return value is a mixed array of strings or HTML elements, which should be compatible with libraries like [bel](https://www.npmjs.com/package/bel).
+The type of the return value is an array of DOM `Node`s, which should be compatible with libraries like [bel](https://www.npmjs.com/package/bel).
 
 Any string of numerals 0-9, CJK characters, and the characters `々` and `ヶ`, will be captured.
 
