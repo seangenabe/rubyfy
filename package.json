@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "babel lib --out-dir dist",
     "test": "nyc ava",
+    "ava": "ava",
     "pretest": "cross-env BABEL_ENV=test npm run compile",
     "posttest": "npm run compile",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
@@ -24,11 +25,15 @@
     "url": "https://github.com/seangenabe/rubyfy/issues"
   },
   "homepage": "https://github.com/seangenabe/rubyfy",
+  "dependencies": {
+    "global": "^4.3.1"
+  },
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-cli": "^6.14.0",
     "babel-plugin-istanbul": "^2.0.0",
     "babel-plugin-transform-unicode-property-regex": "^1.0.0",
+    "bel": "^4.5.0",
     "coveralls": "^2.11.12",
     "cross-env": "^2.0.0",
     "nyc": "^8.1.0"

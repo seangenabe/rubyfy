@@ -94,3 +94,15 @@ t('has ruby', t => {
   t.falsy(p.parse('abc').hasRuby)
   t.truthy(p.parse('字（じ）').hasRuby)
 })
+
+t('parse ka and noma', t => {
+  let p = new Parser()
+  let result = p.parse('ヶ（か）々（び）')
+  t.deepEqual(
+    [...result],
+    [
+      { rb: 'ヶ', rt: 'か' },
+      { rb: '々', rt: 'び' }
+    ]
+  )
+})

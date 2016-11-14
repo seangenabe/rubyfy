@@ -14,25 +14,27 @@ Easily write ruby annotations and output it as HTML.
 const rubyfy = require('rubyfy')
 ```
 
-Convert a string by wrapping the ruby text in full-width parentheses:
+Convert a string by wrapping the ruby text in full-width parentheses `（）`:
 
 ```javascript
 rubyfy('日（に）本（ほん）語（ご）')
-// => "<ruby>日<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>本<rp>(</rp><rt>ほん</rt><rp>)</rp></ruby><ruby>語<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>"
+// => <ruby>日<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>本<rp>(</rp><rt>ほん</rt><rp>)</rp></ruby><ruby>語<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>
 ```
+
+The type of the return value is a mixed array of strings or HTML elements, which should be compatible with libraries like [bel](https://www.npmjs.com/package/bel).
 
 Any string of numerals 0-9, CJK characters, and the characters `々` and `ヶ`, will be captured.
 
 ```javascript
 rubyfy('今日（きょう）')
-// => "<ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>"
+// => <ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>
 ```
 
-Force a portion of the text to be the ruby body using double full-width parentheses:
+Force a portion of the text to be the ruby body using double full-width parentheses `（（））`:
 
 ```javascript
 rubyfy('（（Alice））（アリス）')
-// => "<ruby>Alice<rp>(</rp><rt>アリス</rt><rp>)</rp></ruby>"
+// => <ruby>Alice<rp>(</rp><rt>アリス</rt><rp>)</rp></ruby>
 ```
 
 ## Advanced usage
@@ -61,7 +63,3 @@ let renderResult = renderer.render()
 ```
 
 More details on the [API documentation](./API.md).
-
-## License
-
-MIT
