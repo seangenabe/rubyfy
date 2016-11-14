@@ -46,3 +46,8 @@ t('custom object support', t => {
   let r = new Renderer()
   t.deepEqual(r.render([{ abc: 123 }]), [{ abc: 123 }])
 })
+
+t('renderer options', t => {
+  let r = new Renderer({ openRp: '{', closeRp: '}' })
+  t.is(toHTMLString(r.render([{ rb: '六', rt: 'ろく' }])), '<ruby>六<rp>{</rp><rt>ろく</rt><rp>}</rp></ruby>')
+})
