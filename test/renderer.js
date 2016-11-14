@@ -41,3 +41,8 @@ t('should render valid HTML', t => {
   let r = new Renderer()
   t.is(toHTMLString(r.render(['&><'])), '&amp;&gt;&lt;')
 })
+
+t('custom object support', t => {
+  let r = new Renderer()
+  t.deepEqual(r.render([{ abc: 123 }]), [{ abc: 123 }])
+})
