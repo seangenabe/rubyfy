@@ -32,19 +32,26 @@ These options can be passed to the constructor or be changed after construction 
 * `openRp: String` - Content of opening rp element. Default `(`. Specify the empty string `''` to disable placing an opening rp element.
 * `closeRp: String` - Content of closing rp element. Default: `)`. Specify the empty string `''` to disable placing a closing rp element.
 
-### new Renderer(opts = {})
+### new Renderer({ openRp = '(', closeRp = ')' } = {})
+
+Initializes a new renderer with the specified options.
 
 ### renderer.render(objects)
 
-Renders the inputted values into an HTML string.
+Renders the inputted values into an HTML array. For each object in the input, the corresponding output will be:
+
+Input      | Output
+---------- | ----------------------------
+string     | `Text` (a DOM text node)
+{ rb }     | `Text`
+{ rb, rt } | A `<ruby>` DOM `HTMLElement`
+other      | The object is returned as-is
 
 Parameters:
-* `objects: Iterable<String|{rb: String, rt: String}>`
+* `objects: Iterable<string|{rb: String, rt: String}>`
 
-Returns: `String` - HTML string
+Returns: `String` - Node[]
 
-### renderer.renderI(objects)
+### renderer.renderSingle(single)
 
-Return: `Generator<String>`
-
-### Renderer.renderSingle(single, { openRp, closeRp })
+Renders a single object as above.
