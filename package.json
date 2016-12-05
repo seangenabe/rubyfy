@@ -1,6 +1,6 @@
 {
   "name": "rubyfy",
-  "version": "4.0.1-0",
+  "version": "4.0.1-1",
   "description": "Easily write ruby annotations and output it as HTML.",
   "main": "dist/index.js",
   "scripts": {
