@@ -1,6 +1,6 @@
 # rubyfy
 
-Easily write ruby annotations and output it as HTML.
+Easily write ruby annotations and output them as HTML.
 
 [![npm](https://img.shields.io/npm/v/rubyfy.svg?style=flat-square)](https://www.npmjs.com/package/rubyfy)
 [![Build Status](https://img.shields.io/travis/seangenabe/rubyfy/master.svg?style=flat-square)](https://travis-ci.org/seangenabe/rubyfy)
