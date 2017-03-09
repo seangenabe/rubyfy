@@ -71,6 +71,15 @@ t('end with open rt', t => {
   t.is(p.parse('（（ji））（じ').join(''), 'ji（じ')
 })
 
+t('empty rt', t => {
+  let p = new Parser()
+  let result = p.parse('教（きょう）科（）書（しょ）')
+  t.deepEqual(
+    [...result],
+    [{ rb: '教', rt: 'きょう' }, '科', { rb: '書', rt: 'しょ' }]
+  )
+})
+
 t('custom delimiters', t => {
   let p = new Parser()
   p.openRt = '【'
