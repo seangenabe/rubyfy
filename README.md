@@ -1,5 +1,7 @@
 # rubyfy
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/seangenabe/rubyfy.svg)](https://greenkeeper.io/)
+
 Easily write ruby annotations and output them as HTML.
 
 [![npm](https://img.shields.io/npm/v/rubyfy.svg?style=flat-square)](https://www.npmjs.com/package/rubyfy)
