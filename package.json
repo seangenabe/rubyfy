@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "ava": "^0.21.0",
-    "bel": "^4.5.0",
+    "bel": "^5.1.5",
     "coveralls": "^3.0.0",
     "cross-env": "^5.0.0",
     "nyc": "^11.0.1",
