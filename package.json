@@ -27,7 +27,7 @@
     "global": "^4.3.1"
   },
   "devDependencies": {
-    "ava": "^0.21.0",
+    "ava": "^0.24.0",
     "bel": "^4.5.0",
     "coveralls": "^3.0.0",
     "cross-env": "^5.0.0",
