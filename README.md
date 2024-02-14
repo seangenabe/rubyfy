@@ -3,13 +3,12 @@
 Easily write ruby annotations and output them as HTML.
 
 [![npm](https://img.shields.io/npm/v/rubyfy.svg?style=flat-square)](https://www.npmjs.com/package/rubyfy)
-[![Coverage Status](https://img.shields.io/coveralls/seangenabe/rubyfy/master.svg?style=flat-square)](https://coveralls.io/github/seangenabe/rubyfy?branch=master)
 [![node](https://img.shields.io/node/v/rubyfy.svg?style=flat-square)](https://nodejs.org/en/download/)
 
 ## Usage
 
 ```javascript
-const rubyfy = require('rubyfy')
+import { rubyfy } from "rubyfy"
 ```
 
 Convert a string by wrapping the ruby text in full-width parentheses `（）`:
@@ -40,9 +39,8 @@ rubyfy('（（Alice））（アリス）')
 You can take the parser and the renderer to use for yourself:
 
 ```javascript
-let parser = new rubyfy.Parser('漢（かん）字（じ）です')
-let parseResult = parser.parse()
-parseResult
+import { parse } from "rubyfy/out/parser.js"
+parse('漢（かん）字（じ）です')
 ```
 
 Output:
@@ -56,8 +54,8 @@ Output:
 
 Render using the parse result:
 ```javascript
-let renderer = new rubyfy.Renderer(parseResult)
-let renderResult = renderer.render()
+import { render } from "rubyfy/out/render.js"
+render(parseResult)
 ```
 
 More details on the [API documentation](./API.md).

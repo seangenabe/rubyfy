@@ -1,8 +1,8 @@
 import document from "global/document";
-import type { RubyPair } from "./parser";
+import type { RubyPair } from "./parser.mts";
 
 function appendText(node: Node, text: string) {
-  ndoe.appendChild(document.createTextNode(text));
+  node.appendChild(document.createTextNode(text));
 }
 
 export interface RendererOptions {
@@ -22,19 +22,27 @@ export function render(objects: (RubyPair | string)[], opts: RendererOptions = {
   return objects.map(obj => renderSingle(obj, opts));
 }
 
-export function renderSingle(single: RubyPair | string, opts: RendererOptions = {}) {
+export function renderSingle(single: RubyPair | string, opts?: RendererOptions): Node;
+export function renderSingle<ExtraType extends object>(
+  single: RubyPair | string | ExtraType,
+  opts?: RendererOptions,
+): Node | ExtraType;
+export function renderSingle<ExtraType extends object>(
+  single: RubyPair | string | ExtraType,
+  opts: RendererOptions = {},
+) {
   const { openRp = "(", closeRp = ")" } = opts;
 
   if (typeof single === "string" || typeof single === "number") {
     return document.createTextNode(single);
   }
 
-  if (!single.rb) {
+  if (isExtraType<ExtraType>(single)) {
     return single;
   }
 
   if (!(single.rt && single.rt.length)) {
-    return document.createTextNode(single.rb);
+    return single;
   }
 
   const ret = document.createElement("ruby");
@@ -55,5 +63,10 @@ export function renderSingle(single: RubyPair | string, opts: RendererOptions = 
     appendText(closeRpElement, closeRp);
     ret.appendChild(closeRpElement);
   }
+  console.log("ret", ret);
   return ret;
+}
+
+function isExtraType<T extends object>(obj: RubyPair | T): obj is T {
+  return !("rb" in obj);
 }

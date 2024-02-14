@@ -1,4 +1,4 @@
-import { regex as autoRbRegex } from "./regex";
+import { regex as autoRbRegex } from "./regex.mjs";
 
 export interface ParserOptions {
   openRt?: string;
@@ -13,7 +13,11 @@ export interface RubyPair {
   rt: string;
 }
 
-export function parse(text: string, options: ParserOptions) {
+export function parse(text: string, options: ParserOptions = {}) {
+  if (!text) {
+    return { objects: [], hasRuby: false };
+  }
+
   const {
     openRt = "（",
     closeRt = "）",
@@ -26,7 +30,7 @@ export function parse(text: string, options: ParserOptions) {
     "ug",
   );
 
-  let parsed: (string | RubyPair)[] = [];
+  let objects: (string | RubyPair)[] = [];
   let regexResult: RegExpExecArray | null;
   let startIndex = 0;
   let lastIsString = false;
@@ -38,9 +42,9 @@ export function parse(text: string, options: ParserOptions) {
     }
     let curIsString = typeof x === "string";
     if (lastIsString && curIsString) {
-      parsed[parsed.length - 1] = `${parsed[parsed.length - 1]}${x}`;
+      objects[objects.length - 1] = `${objects[objects.length - 1]}${x}`;
     } else {
-      parsed.push(x);
+      objects.push(x);
     }
     lastIsString = curIsString;
   };
@@ -64,5 +68,5 @@ export function parse(text: string, options: ParserOptions) {
 
   push(text.substring(startIndex));
 
-  return { parsed, hasRuby };
+  return { objects, hasRuby };
 }
