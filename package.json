@@ -33,7 +33,8 @@
     "cross-env": "^5.0.0",
     "nyc": "^12.0.1",
     "regenerate": "^1.3.2",
-    "unicode-9.0.0": "^0.7.0"
+    "unicode-9.0.0": "^0.7.0",
+    "@types/bun": "latest"
   },
   "engines": {
     "node": ">=6.4.0"
@@ -45,5 +46,8 @@
     "source": [
       "*.js"
     ]
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
