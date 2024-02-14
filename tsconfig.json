@@ -4,8 +4,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleDetection": "force",
-    "jsx": "preserve",
-    "jsxImportSource": "@builder.io/mitosis",
+    "jsx": "react-jsx",
     "allowJs": true,
     "noImplicitAny": true,
 
