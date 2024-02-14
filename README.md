@@ -3,9 +3,7 @@
 Easily write ruby annotations and output them as HTML.
 
 [![npm](https://img.shields.io/npm/v/rubyfy.svg?style=flat-square)](https://www.npmjs.com/package/rubyfy)
-[![Build Status](https://img.shields.io/travis/seangenabe/rubyfy/master.svg?style=flat-square)](https://travis-ci.org/seangenabe/rubyfy)
 [![Coverage Status](https://img.shields.io/coveralls/seangenabe/rubyfy/master.svg?style=flat-square)](https://coveralls.io/github/seangenabe/rubyfy?branch=master)
-[![devDependency Status](https://img.shields.io/david/dev/seangenabe/rubyfy.svg?style=flat-square)](https://david-dm.org/seangenabe/rubyfy#info=devDependencies)
 [![node](https://img.shields.io/node/v/rubyfy.svg?style=flat-square)](https://nodejs.org/en/download/)
 
 ## Usage
