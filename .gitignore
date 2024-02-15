@@ -6,3 +6,4 @@ node_modules
 .idea/
 output
 out
+src/regex.ts

@@ -18,8 +18,9 @@
   "author": "Sean Genabe <seangenabe@outlook.com>",
   "main": "out/node/index.js",
   "scripts": {
-    "build": "npx -y mitosis build",
-    "generate-regex": "node tools/generate-regex.js",
+    "build": "bunx mitosis build",
+    "prebuild": "bun run generate-regex",
+    "generate-regex": "bun run tools/generate-regex.ts",
     "test": "bun test src",
     "lint": "npx -y eslint --debug ."
   },
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@builder.io/eslint-plugin-mitosis": "^0.0.15",
     "@types/bun": "latest",
+    "@types/regenerate": "^1.4.3",
     "bel": "^6.0.0",
     "eslint": "^8.56.0",
     "nyc": "^15.1.0",
