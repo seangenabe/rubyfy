@@ -23,6 +23,8 @@
     "test": "bun test src"
   },
   "dependencies": {
+    "@builder.io/mitosis": "^0.0.146",
+    "@builder.io/mitosis-cli": "^0.0.146",
     "global": "^4.4.0"
   },
   "devDependencies": {
