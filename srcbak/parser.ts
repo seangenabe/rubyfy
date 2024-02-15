@@ -30,7 +30,7 @@ export function parse(text: string, options: ParserOptions = {}) {
     "ug",
   );
 
-  const objects: (string | RubyPair)[] = [];
+  let objects: (string | RubyPair)[] = [];
   let regexResult: RegExpExecArray | null;
   let startIndex = 0;
   let lastIsString = false;

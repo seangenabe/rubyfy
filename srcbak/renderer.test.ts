@@ -1,7 +1,7 @@
 import { deepEqual, equal } from "assert/strict";
 import html from "bel";
 import { test } from "bun:test";
-import { render } from "./renderer";
+import { render } from "./renderer.lite";
 
 function toHTMLString(result: ReturnType<typeof render>) {
   console.log("result", result.toString());

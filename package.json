@@ -18,9 +18,10 @@
   "author": "Sean Genabe <seangenabe@outlook.com>",
   "main": "out/node/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx -y mitosis build",
     "generate-regex": "node tools/generate-regex.js",
-    "test": "bun test src"
+    "test": "bun test src",
+    "lint": "npx -y eslint --debug ."
   },
   "dependencies": {
     "@builder.io/mitosis": "^0.0.146",
@@ -28,16 +29,20 @@
     "global": "^4.4.0"
   },
   "devDependencies": {
+    "@builder.io/eslint-plugin-mitosis": "^0.0.15",
     "@types/bun": "latest",
     "bel": "^6.0.0",
+    "eslint": "^8.56.0",
     "nyc": "^15.1.0",
     "regenerate": "^1.4.2",
+    "typescript-eslint": "^7.0.1",
     "unicode-9.0.0": "^0.7.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "engines": {
-    "node": ">=6.4.0"
-  }
+    "node": ">=18"
+  },
+  "type": "module"
 }

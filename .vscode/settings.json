@@ -1,3 +1,17 @@
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "src/*",
+        "isAsync": true
+        // "cmd": "rm -rf ${workspaceFolder}/out && npm run build"
+      },
+      {
+        "match": "mitosis.config.ts",
+        "isAsync": true,
+        "cmd": "npx -y -p typescript tsc mitosis.config.ts"
+      }
+    ]
+  }
 }
