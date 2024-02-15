@@ -20,13 +20,14 @@
   "scripts": {
     "build": "tsc",
     "generate-regex": "node tools/generate-regex.js",
-    "test": "bun test test"
+    "test": "bun test src"
   },
   "dependencies": {
     "global": "^4.4.0"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "bel": "^6.0.0",
     "nyc": "^15.1.0",
     "regenerate": "^1.4.2",
     "unicode-9.0.0": "^0.7.5"

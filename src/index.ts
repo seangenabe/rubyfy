@@ -1,5 +1,5 @@
-import { parse } from "./parser.mjs";
-import { render } from "./renderer.mjs";
+import { parse } from "./parser";
+import { render } from "./renderer";
 
 export function rubyfy(text: string, parseOptions = {}, renderOptions = {}) {
   parse;

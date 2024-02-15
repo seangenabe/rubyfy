@@ -1,4 +1,4 @@
-import { regex as autoRbRegex } from "./regex.mjs";
+import { regex as autoRbRegex } from "./regex";
 
 export interface ParserOptions {
   openRt?: string;

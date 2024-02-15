@@ -1,6 +1,6 @@
 import { test } from "bun:test";
 import { deepEqual, equal, ok } from "node:assert/strict";
-import { parse } from "../src/parser.mts";
+import { parse } from "./parser";
 
 test("no ruby should do nothing", () => {
   equal(parse("abc").objects.join(""), "abc");

@@ -1,5 +1,5 @@
 import document from "global/document";
-import type { RubyPair } from "./parser.mts";
+import type { RubyPair } from "./parser";
 
 function appendText(node: Node, text: string) {
   node.appendChild(document.createTextNode(text));
@@ -19,7 +19,11 @@ export function render(objects: (RubyPair | string)[], opts: RendererOptions = {
     throw new TypeError("objects must be an array");
   }
 
-  return objects.map(obj => renderSingle(obj, opts));
+  return objects.map(obj => {
+    const ret = renderSingle(obj, opts);
+    console.log("ret", ret.toString());
+    return ret;
+  });
 }
 
 export function renderSingle(single: RubyPair | string, opts?: RendererOptions): Node;
@@ -41,8 +45,8 @@ export function renderSingle<ExtraType extends object>(
     return single;
   }
 
-  if (!(single.rt && single.rt.length)) {
-    return single;
+  if (!single.rt) {
+    return document.createTextNode(single.rb);
   }
 
   const ret = document.createElement("ruby");
@@ -63,10 +67,9 @@ export function renderSingle<ExtraType extends object>(
     appendText(closeRpElement, closeRp);
     ret.appendChild(closeRpElement);
   }
-  console.log("ret", ret);
   return ret;
 }
 
 function isExtraType<T extends object>(obj: RubyPair | T): obj is T {
-  return !("rb" in obj);
+  return !("rb" in obj && obj.rb);
 }

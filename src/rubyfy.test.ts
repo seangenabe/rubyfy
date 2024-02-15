@@ -1,7 +1,7 @@
+import html from "bel";
 import { test } from "bun:test";
-import html from "nanohtml";
 import { equal } from "node:assert/strict";
-import { rubyfy } from "../src/index.mjs";
+import { rubyfy } from "./index";
 
 test("rubyfy", () => {
   let content = rubyfy("a字（じ）b");
