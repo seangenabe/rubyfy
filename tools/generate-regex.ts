@@ -1,7 +1,7 @@
 #!/usr/bin/env -S bun run
 // Generate regex for blocks
 
-import * as regenerate from "regenerate";
+import { default as regenerate } from "regenerate";
 
 const CUI = "CJK_Unified_Ideographs";
 const CCI = "CJK_Compatibility_Ideographs";
