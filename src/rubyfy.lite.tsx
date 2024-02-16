@@ -1,6 +1,6 @@
-import { ParserOptions, parse } from "./parser"
-import { RendererOptions } from "./renderer-utils"
-import Renderer from "./renderer.lite"
+import { ParserOptions, parse } from "./parser.js"
+import { RendererOptions } from "./renderer-utils.js"
+import Renderer from "./renderer.lite.jsx"
 
 export interface RubyfyProps {
   text: string

@@ -1,4 +1,4 @@
-import { RubyPair } from "./ruby-pair";
+import { RubyPair } from "./ruby-pair.js";
 
 export interface RendererOptions {
   openRp?: string;

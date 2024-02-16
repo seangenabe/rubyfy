@@ -1,8 +1,8 @@
 import { For } from "@builder.io/mitosis"
 import { type JSX } from "@builder.io/mitosis/jsx-runtime"
-import { RendererOptions } from "./renderer-utils"
-import { type RubyPair } from "./ruby-pair"
-import RenderSingle from "./render-single.lite"
+import RenderSingle from "./render-single.lite.jsx"
+import { RendererOptions } from "./renderer-utils.js"
+import { type RubyPair } from "./ruby-pair.js"
 
 export interface RenderProps {
   options?: RendererOptions

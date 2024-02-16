@@ -1,6 +1,6 @@
 import { JSX } from "@builder.io/mitosis/jsx-runtime"
-import CloseRp from "./close-rp.lite"
-import OpenRp from "./open-rp.lite"
+import CloseRp from "./close-rp.lite.jsx"
+import OpenRp from "./open-rp.lite.jsx"
 
 export interface RtGroupProps {
   options?: {

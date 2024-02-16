@@ -1,8 +1,8 @@
 import { Show } from "@builder.io/mitosis"
-import CloseRp from "./close-rp.lite"
-import OpenRp from "./open-rp.lite"
-import { hasRb, hasRt, type RendererOptions } from "./renderer-utils"
-import { type RubyPair } from "./ruby-pair"
+import CloseRp from "./close-rp.lite.jsx"
+import OpenRp from "./open-rp.lite.jsx"
+import { hasRb, hasRt, type RendererOptions } from "./renderer-utils.js"
+import { type RubyPair } from "./ruby-pair.js"
 
 export interface RenderRubyPairProps {
   single?: RubyPair

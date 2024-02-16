@@ -10,11 +10,11 @@ module.exports = {
     "svelte",
     "react",
     "preact",
+    "html",
+    "mitosis",
     // "alpine",
     // "angular",
     // "customElement",
-    // "html",
-    // "mitosis",
     // "liquid",
     // "reactNative",
     // "swift",
@@ -26,4 +26,7 @@ module.exports = {
   ],
   dest: "out",
   parserOptions: {},
+  commonOptions: {
+    // typescript: true,
+  },
 }
